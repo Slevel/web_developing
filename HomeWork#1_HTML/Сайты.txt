@@ -1,0 +1,24 @@
+﻿1)История создания HTML
+http://codingcraft.ru/html.php
+http://webstro.org/content/view/121/41/
+http://phpmove.ru/page/history-html
+
+2)Структура документа HTML
+http://www.helloworld.ru/texts/comp/web/html/html3/stdoc.htm
+http://www.site-do.ru/html/html2.php
+
+3)Версии HTML
+http://codingcraft.ru/html.php (из п.1.)
+http://webstro.org/content/view/121/41/ (из п.1.)
+http://phpmove.ru/page/history-html (из п.1.)
+https://htmlweb.ru/html/xhtml.php
+https://toster.ru/q/24258
+http://htmlbook.ru/html/!doctype
+
+4)Формы HTML
+http://www.site-do.ru/html/html11.php?text1=%D0%B0%D0%B0%D0%BF
+http://www.softtime.ru/info/articlephp.php?id_article=96
+
+5)Полезные сайты
+http://html.manual.ru/book/html/hierarchy.php
+http://htmlka.com/begushhaya-stroka/
