@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Homework #2";
+}
+<div class="containerWelcome">
+	<form id="form_1">
+		Введите Ваше имя: 
+		<br>
+		<input type='text' size='20' maxlength='15' placeholder="Имя" id='name'>
+		<input type='text' size='20' maxlength='25' placeholder="Фамилия" id='surname'>
+	    <br><br>        
+        Ваш возраст:
+	    <input type="number" min='1' max='100' id='age'>
+		<br><br> 
+		Пол: 
+		<input type="radio" name="gender" value="М">Муж.
+		<input type="radio" name="gender" value="Ж">Жен.
+		<br><br>
+		<input type="button" value="Отправить" onClick="aboutUser()">
+		<input type="reset" value="Очистить"></p>
+	</form>
+</div>
