@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Вывод информации о пользователе</title>
+		<meta name="description" content="Выполнение учебной задачи по JS" />
+		
+		<!-- CSS SECTION -->
+		<style type="text/css">
+			body	{
+				background-color: #e2f7df;
+			} 
+			.container	{ 
+				width: 400px; 
+				height: 120px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin:-100px 0 0 -200px;
+				background: #addfad;
+				padding: 15px;
+				border: solid 1px black; 
+			}
+		</style>
+		
+		<!-- JAVASCRIPT SECTION -->
+		<script language="javascript" type="text/javascript" >
+			function aboutUser()	{
+				name = document.forms["form_1"].elements["name"].value;
+				surname = document.forms["form_1"].elements["surname"].value;
+				age = document.forms["form_1"].elements["age"].value;
+				gender = document.forms["form_1"].elements["gender"].value;
+				if (name !== '' && surname !== '' && age !== '' )	{
+					alert('Добрый день, уважаемый Пользователь!\n\nИнформация о Вас:\nИмя: '+ name + '\nФамилия: ' + surname + '\nВозраст: ' + age + '\nПол: ' + gender);
+				}
+				else alert('Пожалуйста, введите данные!');
+            }
+		</script>
+	</head>
+	
+	<body>
+		<div class="container">
+			<form id="form_1">
+				Введите Ваше имя: 
+				<br>
+				<input type='text' size='20' maxlength='15' placeholder="Имя" id='name'>
+				<input type='text' size='20' maxlength='25' placeholder="Фамилия" id='surname'>
+				<br>
+				Ваш возраст: <input type="number" min='1' max='100' id='age'>
+				<br>
+				Пол: 
+				<input type="radio" name="gender" value="М">Муж.
+				<input type="radio" name="gender" value="Ж">Жен.
+				<br><br>
+
+				<input type="button" value="Отправить" onClick="aboutUser()">
+				<input type="reset" value="Очистить"></p>
+			</form>
+		</div>
+	</body>
+</html>
