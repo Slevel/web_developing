@@ -1,0 +1,36 @@
+﻿nav {
+	top: 0;
+	position: fixed;
+	right: 0;
+	left: 0;
+}
+
+ol, ul	{
+	list-style: none;
+}
+
+ul.navbar {
+	height: 35px;
+	background-color: #93b874;
+}
+ul.navbar li {
+	line-height: 35px;
+	height: 35px;
+	float:left;
+	width:auto;
+}
+ul.navbar li a {
+	display: block;
+	color: #fff;
+	text-decoration:none;
+	padding: 0 10px;
+	border-right: 1px solid #f4f4f4;
+}
+
+ul.navbar li a:hover {
+	background-color: #89ac6c;
+}
+
+ul.navbar li.current a {
+	background-color:#567040; 
+}
