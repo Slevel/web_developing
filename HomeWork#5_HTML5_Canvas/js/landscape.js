@@ -1,8 +1,8 @@
-function sun(x, y, r)	{	// класс, задающий солнце
-    this.x = x; // координата х
-    this.y = y; // координата у
-	this.r = r; // радиус
-    this.draw = function(context)	{	// метод, рисующий солнце
+п»їfunction sun(x, y, r)	{	// РєР»Р°СЃСЃ, Р·Р°РґР°СЋС‰РёР№ СЃРѕР»РЅС†Рµ
+    this.x = x; // РєРѕРѕСЂРґРёРЅР°С‚Р° С…
+    this.y = y; // РєРѕРѕСЂРґРёРЅР°С‚Р° Сѓ
+	this.r = r; // СЂР°РґРёСѓСЃ
+    this.draw = function(context)	{	// РјРµС‚РѕРґ, СЂРёСЃСѓСЋС‰РёР№ СЃРѕР»РЅС†Рµ
 		this.gradient_sun = context.createRadialGradient(this.x, this.y, this.r/4, this.x, this.y, this.r);
 		this.gradient_sun.addColorStop(0, '#ffff00');
 		this.gradient_sun.addColorStop(1, "rgba(249, 255, 184 ,0)"); 
@@ -11,7 +11,7 @@ function sun(x, y, r)	{	// класс, задающий солнце
     };
 }
 
-function moon(x, y, r)	{	// луна
+function moon(x, y, r)	{	// Р»СѓРЅР°
     this.x = x;
     this.y = y;
 	this.r = r;
@@ -25,7 +25,7 @@ function moon(x, y, r)	{	// луна
     };
 }
 
-function day(x, y, width, height) // дневной фон
+function day(x, y, width, height) // РґРЅРµРІРЅРѕР№ С„РѕРЅ
 {
     this.x = x;
     this.y = y;
@@ -42,13 +42,13 @@ function day(x, y, width, height) // дневной фон
     };
 }
 
-function night(x, y, width, height) // ночной фон
+function night(x, y, width, height) // РЅРѕС‡РЅРѕР№ С„РѕРЅ
 {
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
-    this.draw = function(context) {
+    this.draw = function(context) { 
 		this.gradient_background = context.createLinearGradient(this.x, this.y, 0, this.height);
 		this.gradient_background.addColorStop(0, '#002137');
 		this.gradient_background.addColorStop(0.78, '#224c6e');
@@ -56,32 +56,40 @@ function night(x, y, width, height) // ночной фон
 		this.gradient_background.addColorStop(1, '#145214');
 		context.fillStyle = this.gradient_background;
         context.fillRect(this.x, this.y, this.width, this.height);
+		// Р·РІС‘Р·РґРЅРѕРµ РЅРµР±Рѕ 
+		for (i=1; i<100; i++)	{
+			context.beginPath();
+			context.arc(20 + i^9 + i*10, 10 + i^6 + i*19 + i^6 + i*19, 2, 0, Math.PI * 2, true);
+			context.arc(20 + i^6 + i*7, 10 + i^6 + i*19 + i^5 + i*19, 1, 0, Math.PI * 2, true);
+			if ((10 + i^6 + i*19 + i^5 + i*19) < 300)	{
+				context.fillStyle = "white";
+				context.fill();
+			}
+		}
     };
 }
 
-
 function init()	{
-	// инициализация
-	current_time = 'day'; // стартовое время суток
-	// дневные объекты
+	// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
+	current_time = 'day'; // СЃС‚Р°СЂС‚РѕРІРѕРµ РІСЂРµРјСЏ СЃСѓС‚РѕРє
+	// РґРЅРµРІРЅС‹Рµ РѕР±СЉРµРєС‚С‹
 	var background_day = new day(0, 0, 1024, 720);
 	var sun_onSky = new sun(-160, 300, 80);
-	//ночные объекты
+	//РЅРѕС‡РЅС‹Рµ РѕР±СЉРµРєС‚С‹
 	var background_night = new night(0, 0, 1024, 720);
 	var moon_onSky = new moon(-160, 300, 80);
-	// скорость движения по оси абсцисс
+	// СЃРєРѕСЂРѕСЃС‚СЊ РґРІРёР¶РµРЅРёСЏ РїРѕ РѕСЃРё Р°Р±СЃС†РёСЃСЃ
     var vX = 2;
-	// скорость движения по оси ординат
+	// СЃРєРѕСЂРѕСЃС‚СЊ РґРІРёР¶РµРЅРёСЏ РїРѕ РѕСЃРё РѕСЂРґРёРЅР°С‚
     var vY = 0.2;
-	// инициализация canvas'a с пейзажем
+	// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ canvas'a СЃ РїРµР№Р·Р°Р¶РµРј
     var element = document.getElementById("landscape");
-	// размеры сцены
+	// СЂР°Р·РјРµСЂС‹ СЃС†РµРЅС‹
     element.width = background_day.width;
     element.height = background_day.height;
     var context = element.getContext("2d");
-	//инициализация сцены с анимацией
+	//РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС†РµРЅС‹ СЃ Р°РЅРёРјР°С†РёРµР№
     var scene = new anim(element, 50, false);
-	
     scene.draw(function() {
 		if (current_time == 'night')	{
 			background_night.draw(context);
@@ -94,7 +102,7 @@ function init()	{
     });
 	
     scene.update(function()	{
-	// обработка движения луны (если ночь)
+	// РѕР±СЂР°Р±РѕС‚РєР° РґРІРёР¶РµРЅРёСЏ Р»СѓРЅС‹ (РµСЃР»Рё РЅРѕС‡СЊ)
 	if (current_time == 'night')	{
         if (moon_onSky.x - moon_onSky.r < -320 || moon_onSky.x + moon_onSky.r > 1184)	{
             current_time = 'day'
@@ -114,7 +122,7 @@ function init()	{
 			moon_onSky.x += vX;
 	}
 		
-	// обработка движения солнца (если день)
+	// РѕР±СЂР°Р±РѕС‚РєР° РґРІРёР¶РµРЅРёСЏ СЃРѕР»РЅС†Р° (РµСЃР»Рё РґРµРЅСЊ)
 	if (current_time == 'day')	{
 		if (sun_onSky.x - sun_onSky.r < -320 || sun_onSky.x + sun_onSky.r > 1184)	{
             current_time = 'night'
@@ -143,7 +151,7 @@ function init()	{
 	}
 	
     var click = false;
-    // по шелчку мыши остановка
+    // РїРѕ С€РµР»С‡РєСѓ РјС‹С€Рё РѕСЃС‚Р°РЅРѕРІРєР°
     element.onclick = function() {
         if (!click) {
             click = true;
