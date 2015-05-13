@@ -1,0 +1,6 @@
+{
+    success: true,
+    products: [
+        {id: 1, name: 'Иван', surname: 'Иванов', age: 16, gender: 'm', snatch: 80, clean_jerk: 120},
+    ]
+}
