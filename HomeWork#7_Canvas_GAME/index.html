@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script src="js/game.js"></script>
+		<link id="style" rel="stylesheet" type="text/css" href="css/main.css" />
+        <title>"TaRAKaN"</title>
+        <img id="tarakan" src="image/tarakan3.png" style='display:none;' />
+        <img id="background" src="image/background.png" style='display:none;' />
+        <img id="first" src="image/1.png" style='display:none;' />
+        <img id="second" src="image/2.png" style='display:none;' />
+        <img id="third" src="image/3.png" style='display:none;' />
+        <img id="fourth" src="image/4.png" style='display:none;' />
+    </head>
+    <body>
+        <section id="CanvasSection">
+            <canvas id="canvas" width="1124" height="600"></canvas>
+        </section>
+		<div class="form">
+			<div class="button"><input type="button" value="Поставить"/></div>
+			<div class="players">
+					1. Выберите игрока: <br>
+					<input type="radio" name="player" value="player1"> Игрок 1 <Br>
+					<input type="radio" name="player" value="player2"> Игрок 2 <Br>
+					<input type="radio" name="player" value="player3"> Игрок 3 <Br>
+			</div>
+			<div class="bugs">
+					2. Выберите участника: <br>
+					<input type="radio" name="tarakan" value="bug1"> Таракан 1 <Br>
+                    <input type="radio" name="tarakan" value="bug2"> Таракан 2 <Br>
+                    <input type="radio" name="tarakan" value="bug3"> Таракан 3 <Br>
+                    <input type="radio" name="tarakan" value="bug4"> Таракан 4 <Br>
+			</div>
+			<div class="pay">
+				3. Ставка: <br>
+				<input type="text" size="15">
+			</div>
+            <div class=goButton><img id="goButton" src="image/go_button.png"/></div>
+		</div>
+    </body>
+</html>
