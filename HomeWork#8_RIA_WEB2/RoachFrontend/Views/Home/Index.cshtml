@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script language="javascript" src="~/Scripts/game.js"></script>
+        <link id="style" rel="stylesheet" type="text/css" href="~/Content/main.css" />
+        <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
+        <img id="tarakan" src="~/Images/tarakan3.png" style='display:none;' />
+        <img id="background" src="~/Images/background.png" style='display:none;' />
+        <img id="first" src="~/Images/1.png" style='display:none;' />
+        <img id="second" src="~/Images/2.png" style='display:none;' />
+        <img id="third" src="~/Images/3.png" style='display:none;' />
+        <img id="fourth" src="~/Images/4.png" style='display:none;' />
+        <script language="javascript" src="~/Scripts/game.js?123"></script>
+        <script type="text/javascript" src="~/Scripts/ext-all-debug.js"></script>
+        <style>
+            nav {
+                top: 0;
+                position: relative;
+                right: 0;
+                left: 0;
+            }
+
+            ol, ul {
+                list-style: none;
+            }
+
+            ul.navbar {
+                height: 35px;
+                background-color: #93b874;
+            }
+
+            ul.navbar li {
+                line-height: 35px;
+                height: 35px;
+                float: left;
+                width: auto;
+            }
+
+            ul.navbar li a {
+                display: block;
+                color: #fff;
+                text-decoration: none;
+                padding: 0 10px;
+                border-right: 1px solid #f4f4f4;
+            }
+
+            ul.navbar li a:hover {
+                background-color: #89ac6c;
+            }
+
+            ul.navbar li.current a {
+                background-color: #567040;
+            }
+        </style>
+        <title>Тараканы</title>
+    </head>
+    <body>
+        <nav>
+            <ul class="navbar">
+                <li class="current"><a href="~/Home/Index">Главная</a></li>
+                <li><a href="~/Home/Manage">Панель управления</a></li>
+            </ul>
+        </nav>
+        <canvas id="canvas" width="1124" height="600"></canvas>
+        <div class="form">
+            <div class="buttonIn"><input id="inputButton" type="button" value="Поставить" /></div>
+            <div class="buttonDel"><input id="deleteButton" type="button" value="Удалить" /></div>
+            <div class="players">
+                1. Введите имя игрока: <br>
+                <input type="text" id="playerName" size="15">
+            </div>
+            <div class="bugs">
+                2. Выберите участника: <br>
+                <input type="radio" name="tarakan" id="bug1" value="bug1"> Таракан 1 <br>
+                <input type="radio" name="tarakan" id="bug2" value="bug2"> Таракан 2 <br>
+                <input type="radio" name="tarakan" id="bug3" value="bug3"> Таракан 3 <br>
+                <input type="radio" name="tarakan" id="bug4" value="bug4"> Таракан 4 <br>
+            </div>
+            <div class="pay">
+                3. Ставка: <br>
+                <input type="text" id="cost" size="15">
+
+            </div>
+            <div class=selectBox>
+                <select id="listRate" name="list" size="8"></select>
+                <select id="listResult" name="list" size="8"></select>
+            </div>
+
+            <div class=goButton><img id="" src="~/Images/go_button_pressed.png" /></div>
+            <div class=goButton><img id="goButton" src="~/Images/go_button.png" /></div>
+        </div>
+    </body>
+</html>
