@@ -1,25 +1,27 @@
 .form {
 	background: #aae898;
 	width: 1124px; 
-	height: 150px;
+	height: 140px;
 	position: absolute;
-
-	
-
 }
-.button{
+#buttonIn{
 	position: absolute;
 	left: 5px;
 	top: 80%;
 }
-.players{
+#buttonDel{
+	position: absolute;
+	left: 95px;
+	top: 80%;
 }
-.bugs{
+#players{
+}
+#bugs{
 	position: absolute;
 	left: 14%;
 	top: 0;
 }
-.pay{
+#pay{
 	position: absolute;
 	left: 30%;
 	top: 0;
@@ -27,5 +29,10 @@
 .goButton {
     position: absolute;
 	right: 25px;
-	top: 25px;
+	top: 20px;
+}
+#selectBox{
+	position:absolute;
+	right: 20%;
+	top:0;
 }
